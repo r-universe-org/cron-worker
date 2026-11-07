@@ -5,7 +5,7 @@ skips `schedule:` runs when it is busy, sometimes for hours. Every 15 minutes th
 latest run of each workflow in [`src/targets.js`](src/targets.js), and if it was created more than
 `maxAge` minutes ago (default 55), it starts the workflow with a `workflow_dispatch` event.
 
-The worker authenticates as a GitHub App owned by `r-universe-org`, which can be installed on
+The worker authenticates as a GitHub App owned by the `r-universe` org, which can be installed on
 repositories in any organization. It only acts on the repositories listed in `src/targets.js`:
 installing the app does nothing by itself.
 
@@ -19,15 +19,15 @@ installing the app does nothing by itself.
 
 ## The GitHub App
 
-Created by an owner of `r-universe-org`, under *Settings → Developer settings → GitHub Apps → New
-GitHub App* (https://github.com/organizations/r-universe-org/settings/apps/new):
+Owned by the `r-universe` org, with its settings at
+https://github.com/organizations/r-universe/settings/apps/r-universe-cron. It was created with:
 
  - **Name**: `r-universe-cron`, **Homepage URL**: this repository.
  - **Webhook**: uncheck *Active* (the worker needs no events).
  - **Repository permissions**: *Actions: Read and write*. (*Metadata: Read-only* is added
    automatically.) Nothing else.
  - **Where can this GitHub App be installed?**: *Any account*. A private app can only be installed
-   on `r-universe-org` itself, not on e.g. `r-devel`.
+   on `r-universe` itself, not on e.g. `r-devel`.
 
 Afterwards, on the app's page:
 

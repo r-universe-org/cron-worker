@@ -10,7 +10,7 @@ workers_dev = false
 [triggers]
 crons = ["*/15 * * * *"]
 
-# The ID of the GitHub App (owned by r-universe-org). Its private key is a secret, see README.md:
+# The ID of the GitHub App (owned by the r-universe org). Its private key is a secret, see README.md:
 # npx wrangler secret put GITHUB_APP_PRIVATE_KEY
 [vars]
 GITHUB_APP_ID = "5658492"
