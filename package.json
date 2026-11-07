@@ -1,0 +1,14 @@
+{
+  "name": "r-universe-cron",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare worker that dispatches GitHub Actions workflows that GitHub's scheduler skipped",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test",
+    "dev": "npx wrangler dev --test-scheduled",
+    "deploy": "npx wrangler deploy"
+  },
+  "license": "MIT"
+}

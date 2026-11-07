@@ -1,0 +1,19 @@
+name = "r-universe-cron"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+account_id = "3fcdf4a2e34a7a2e74fc8686b68acea1" # rOpenSci Main, same as r-universe-edge
+
+# Only a cron trigger, no public url.
+workers_dev = false
+
+# The workflows to check are in src/targets.js.
+[triggers]
+crons = ["*/15 * * * *"]
+
+# The ID of the GitHub App (owned by r-universe-org). Its private key is a secret, see README.md:
+# npx wrangler secret put GITHUB_APP_PRIVATE_KEY
+[vars]
+GITHUB_APP_ID = "5658492"
+
+[observability]
+enabled = true
